@@ -112,10 +112,4 @@ O projeto expõe a UI do Swagger (SmallRye OpenAPI). Após iniciar a aplicação
 
 ---
 
-## 📝 Licença
-
-Coloque aqui a licença do projeto conforme necessário (ex.: MIT).
-
----
-
 Se quiser, eu posso: commitar as mudanças, adicionar instruções de run em Docker, ou configurar a geração do relatório JaCoCo em `target/site/jacoco`.
