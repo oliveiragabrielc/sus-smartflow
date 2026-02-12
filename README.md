@@ -1,78 +1,63 @@
-# sus-smartflow
+# 🏥 SUS SmartFlow
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Sistema backend para triagem inteligente e prontuário unificado no Sistema Único de Saúde (SUS).
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+Projeto desenvolvido para o Hackathon – Inovação para otimização de atendimento no SUS.
 
-## Running the application in dev mode
+---
 
-You can run your application in dev mode that enables live coding using:
+## 🎯 Objetivo
 
-```shell script
-./mvnw quarkus:dev
-```
+O SUS SmartFlow tem como objetivo otimizar o atendimento nas unidades de saúde por meio de:
+- Classificação automática de risco (triagem)
+- Centralização do histórico de atendimentos
+- Apoio à tomada de decisão dos profissionais de saúde
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+---
 
-## Packaging and running the application
+## 🧠 Funcionalidades
 
-The application can be packaged using:
+- Cadastro de pacientes
+- Registro de triagens
+- Classificação automática (VERDE, AMARELO, VERMELHO)
+- Consulta de histórico por paciente
+- API documentada com Swagger (OpenAPI)
 
-```shell script
-./mvnw package
-```
+---
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+## 🏗️ Arquitetura
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+A aplicação segue o padrão em camadas:
 
-If you want to build an _über-jar_, execute the following command:
+Cliente (Swagger/Postman)  
+→ API REST (Resources)  
+→ Service (Regra de negócio)  
+→ Banco de Dados (H2)
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
+---
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+## ⚙️ Tecnologias
 
-## Creating a native executable
+- Java 17
+- Quarkus
+- Hibernate Panache
+- H2 Database
+- OpenAPI / Swagger UI
+- Maven
 
-You can create a native executable using:
+---
 
-```shell script
-./mvnw package -Dnative
-```
+## ▶️ Como rodar o projeto
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
+### Pré-requisitos:
+- Java 21+
+- Maven
+- Git
 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
+### Passos:
 
-You can then execute your native executable with: `./target/sus-smartflow-1.0.0-SNAPSHOT-runner`
+Clone o repositório:
 
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
-
-## Related Guides
-
-- Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code for Hibernate ORM via the active record or the repository pattern
-- SmallRye OpenAPI ([guide](https://quarkus.io/guides/openapi-swaggerui)): Document your REST APIs with OpenAPI - comes with Swagger UI
-- JDBC Driver - H2 ([guide](https://quarkus.io/guides/datasource)): Connect to the H2 database via JDBC
-- REST Jackson ([guide](https://quarkus.io/guides/rest#json-serialisation)): Jackson serialization support for Quarkus REST. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it
-
-## Provided Code
-
-### Hibernate ORM
-
-Create your first JPA entity
-
-[Related guide section...](https://quarkus.io/guides/hibernate-orm)
-
-[Related Hibernate with Panache section...](https://quarkus.io/guides/hibernate-orm-panache)
-
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+```bash
+git clone https://github.com/oliveiragabrielc/sus-smartflow#
+cd sus-smartflow
